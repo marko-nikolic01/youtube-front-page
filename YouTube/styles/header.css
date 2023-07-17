@@ -11,6 +11,7 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(228, 228, 228);
+    z-index: 100;
 }
 
 .left-section {
@@ -40,10 +41,12 @@
     height: 24px;
     margin-left: 24px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .youtube-logo {
     height: 20px;
+    cursor: pointer;
 }
 
 .search-button {
@@ -55,6 +58,17 @@
     border-color: rgb(192, 192, 192);
     margin-left: -1px;
     margin-right: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.search-button:hover {
+    background-color: rgb(230, 230, 230);
 }
 
 .voice-search-button {
@@ -63,16 +77,19 @@
     border-radius: 20px;
     border: none;
     background-color: rgb(248, 248, 248);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .search-icon {
     height: 25px;
-    margin-top: 4px;
 }
 
 .voice-search-icon {
     height: 25px;
-    margin-top: 4px;
 }
 
 .search-bar {
@@ -95,17 +112,83 @@
 
 .upload-icon {
     height: 24px;
+    cursor: pointer;
 }
 
 .youtube-apps-icon {
     height: 24px;
+    cursor: pointer;
 }
 
 .notifications-icon {
     height: 24px;
+    cursor: pointer;
 }
 
 .my-channel-picture {
     height: 32px;
     border-radius: 16px;
+    cursor: pointer;
 }
+
+.notifications {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.notifications-count {
+    font-family: Roboto, Arial;
+    font-size: 11px;
+    font-weight: 500;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: white;
+    background-color: red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: -2px;
+    right: -5px;
+}
+
+.tooltip {
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+    background-color: rgba(100, 100, 100, 0.9);
+    border-radius: 2px;
+    position: absolute;
+    bottom: -35px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.header-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover .tooltip,
+.voice-search-button:hover .tooltip,
+.header-item:hover .tooltip,
+.notifications:hover .tooltip {
+    opacity: 1;
+}
+
